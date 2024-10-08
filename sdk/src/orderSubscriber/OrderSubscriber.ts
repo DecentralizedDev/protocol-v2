@@ -223,11 +223,7 @@ export class OrderSubscriber {
 					dataType
 				);
 			}
-			if (userAccount.hasOpenOrder) {
-				this.usersAccounts.set(key, { slot, userAccount });
-			} else {
-				this.usersAccounts.delete(key);
-			}
+			this.usersAccounts.set(key, { slot, userAccount });
 		}
 	}
 

@@ -140,7 +140,7 @@ export class gprcDriftClientAccountSubscriber extends WebSocketDriftClientAccoun
 		return true;
 	}
 
-	async subscribeToPerpMarketAccount(marketIndex: number): Promise<boolean> {
+	override async subscribeToPerpMarketAccount(marketIndex: number): Promise<boolean> {
 		const perpMarketPublicKey = await getPerpMarketPublicKey(
 			this.program.programId,
 			marketIndex
@@ -164,7 +164,7 @@ export class gprcDriftClientAccountSubscriber extends WebSocketDriftClientAccoun
 		return true;
 	}
 
-	async subscribeToOracle(oracleInfo: OracleInfo): Promise<boolean> {
+	override async subscribeToOracle(oracleInfo: OracleInfo): Promise<boolean> {
 		const oracleString = oracleInfo.publicKey.toString();
 		const client = this.oracleClientCache.get(
 			oracleInfo.source,
